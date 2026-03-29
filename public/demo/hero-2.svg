@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f5132"/>
+      <stop offset="1" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF9933" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FF9933" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <path d="M0,520 C280,420 520,760 800,640 C1080,520 1220,420 1600,520 L1600,900 L0,900 Z" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="0" y="0" width="1600" height="200" fill="url(#accent)"/>
+  <text x="120" y="200" font-family="Poppins, Arial" font-size="52" fill="#fff" font-weight="700">Mass Impact • Strong Identity</text>
+  <text x="120" y="260" font-family="Poppins, Arial" font-size="28" fill="#fff" fill-opacity="0.85">Membership → Instant ID → Verify by QR</text>
+</svg>
+

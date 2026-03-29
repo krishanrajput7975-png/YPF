@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b3d2e"/>
+      <stop offset="1" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="#ffffff" fill-opacity="0.12">
+    <circle cx="1220" cy="210" r="160"/>
+    <circle cx="1380" cy="340" r="90"/>
+  </g>
+  <g transform="translate(120,240)">
+    <rect x="0" y="0" width="520" height="360" rx="28" fill="#ffffff" fill-opacity="0.08"/>
+    <path d="M260 90 v180" stroke="#FF9933" stroke-width="26" stroke-linecap="round"/>
+    <path d="M170 180 h180" stroke="#FF9933" stroke-width="26" stroke-linecap="round"/>
+    <text x="0" y="-30" font-family="Poppins, Arial" font-weight="700" font-size="54" fill="#fff">Healthcare</text>
+    <text x="0" y="420" font-family="Poppins, Arial" font-size="24" fill="#fff" fill-opacity="0.85">Remote villages • Women and Children</text>
+  </g>
+</svg>
+
