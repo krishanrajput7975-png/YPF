@@ -114,11 +114,11 @@ export default async function ContactPage({ params }: { params?: Promise<{ local
                 <div className="mt-1 text-sm text-zinc-950">
                   <a
                     className="font-semibold hover:underline"
-                    href="https://www.yuvvapariwar.org"
+                    href="https://www.yuvvapariwarwelfarefoundation.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    www.yuvvapariwar.org
+                    www.yuvvapariwarwelfarefoundation.com
                   </a>
                 </div>
               </div>
