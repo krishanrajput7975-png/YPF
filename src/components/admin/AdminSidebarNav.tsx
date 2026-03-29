@@ -10,6 +10,7 @@ const nav = [
 	{ href: "/admin-portal/gallery", label: "Gallery" },
 	{ href: "/admin-portal/members", label: "Members" },
 	{ href: "/admin-portal/inbox", label: "Inbox" },
+	{ href: "/admin-portal/leadership", label: "Leadership" },
 ] as const;
 
 export function AdminSidebarNav() {

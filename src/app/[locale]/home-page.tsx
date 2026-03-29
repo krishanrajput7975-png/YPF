@@ -5,8 +5,9 @@ import { HeroSlider } from "@/components/site/HeroSlider";
 import { SectionTabs } from "@/components/site/SectionTabs";
 import { StatsStrip } from "@/components/site/StatsStrip";
 import { HeroImageCarousel } from "@/components/site/HeroImageCarousel";
-import { ObjectiveSection } from "@/components/site/ObjectiveSection";
 import { AwardsBannerCarousel } from "@/components/site/AwardsBannerCarousel";
+import { ObjectiveSection } from "@/components/site/ObjectiveSection";
+import { LeadershipSection } from "@/components/site/LeadershipSection";
 import { getCarouselItems } from "@/lib/cms-carousels";
 import { getLatestUpdates } from "@/lib/cms-latest";
 import { getDictionary, type Locale } from "@/lib/i18n";
@@ -343,6 +344,13 @@ export default async function LocalizedHome({ locale }: { locale: Locale }) {
       </section>
 
       <section className="bg-white">
+        <LeadershipSection
+          title={locale === "en" ? "Leadership Team" : "नेतृत्व"}
+          subtitle={locale === "en" ? "Foundation pillars guiding the mission and execution." : "फाउंडेशन के स्तंभ जो मिशन का मार्गदर्शन करते हैं।"}
+        />
+      </section>
+
+      <section className="bg-[color-mix(in_oklab,var(--color-green)_6%,white)]">
         <Container className="py-10 md:py-14">
           <div className="rounded-2xl border border-black/10 bg-white p-8 md:p-10">
             <h2 className="text-2xl font-bold tracking-tight text-zinc-950">{t.nav.verify}</h2>

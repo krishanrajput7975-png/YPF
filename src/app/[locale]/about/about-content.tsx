@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/site/PageShell";
 import { SectionTabs } from "@/components/site/SectionTabs";
+import { LeadershipSection } from "@/components/site/LeadershipSection";
 import type { Locale } from "@/lib/i18n";
 
 export function LocalizedAboutContent({ locale }: { locale: Locale }) {
@@ -42,6 +43,13 @@ export function LocalizedAboutContent({ locale }: { locale: Locale }) {
           },
         ]}
       />
+
+      <div className="mt-12 bg-zinc-50 py-10 md:py-14 rounded-3xl mb-12">
+        <LeadershipSection
+          title={isEn ? "Leadership Team" : "नेतृत्व"}
+          subtitle={isEn ? "Foundation pillars guiding the mission and execution." : "फाउंडेशन के स्तंभ जो मिशन का मार्गदर्शन करते हैं।"}
+        />
+      </div>
     </PageShell>
   );
 }
