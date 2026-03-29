@@ -74,11 +74,11 @@ export function SiteFooter({ locale = "hi" }: { locale?: "hi" | "en" } = {}) {
                 Website:{" "}
                 <a
                   className="text-white/85 hover:text-white hover:underline"
-                  href="https://www.yuvvapariwarwelfarefoundation.com"
+                  href="https://www.yuvvapariwarwelfarefoundation.online"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  www.yuvvapariwarwelfarefoundation.com
+                  www.yuvvapariwarwelfarefoundation.online
                 </a>
               </div>
             </div>
