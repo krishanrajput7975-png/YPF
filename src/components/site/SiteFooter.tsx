@@ -13,15 +13,6 @@ export function SiteFooter({ locale = "hi" }: { locale?: "hi" | "en" } = {}) {
             <p className="mt-2 text-sm leading-6 text-white/80">
               सदस्यता • ID कार्ड • Verification • फाउंडेशन की खबरें
             </p>
-
-            <div className="mt-8">
-              <div className="text-xs font-semibold uppercase tracking-wide text-white/90">Leadership</div>
-              <ul className="mt-3 space-y-2 text-white/80">
-                <li><span className="font-semibold text-white/90">Vekram singh Ramgarhia</span> - Founder and president</li>
-                <li><span className="font-semibold text-white/90">Surender sufi</span> - Secretary</li>
-                <li><span className="font-semibold text-white/90">Dr. Bharat Chawla</span> - Medical coordinator</li>
-              </ul>
-            </div>
           </div>
 
           <div>
