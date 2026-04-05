@@ -4,7 +4,7 @@ import { getLeadershipMembers } from "@/lib/cms-leadership";
 export async function LeadershipSection({ title = "Leadership Team", subtitle }: { title?: string; subtitle?: string }) {
   const members = await getLeadershipMembers().catch(() => [
     { id: "president", name: "Vekram singh Ramgarhia", role: "Founder and president", imageUrl: "" },
-    { id: "secretary", name: "Surender sufi", role: "Secretary", imageUrl: "" },
+    { id: "secretary", name: "Surinder kumar", role: "Secretary", imageUrl: "" },
     { id: "coordinator", name: "Dr. Bharat Chawla", role: "Medical coordinator", imageUrl: "" }
   ]);
 

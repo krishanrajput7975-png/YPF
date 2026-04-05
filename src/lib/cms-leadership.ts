@@ -11,7 +11,7 @@ const CONTENT_KEY = "leadership_v1";
 
 export const DEFAULT_LEADERSHIP: LeadershipMember[] = [
   { id: "president", name: "Vekram singh Ramgarhia", role: "Founder and president", imageUrl: "" },
-  { id: "secretary", name: "Surender sufi", role: "Secretary", imageUrl: "" },
+  { id: "secretary", name: "Surinder kumar", role: "Secretary", imageUrl: "" },
   { id: "coordinator", name: "Dr. Bharat Chawla", role: "Medical coordinator", imageUrl: "" }
 ];
 

@@ -17,23 +17,24 @@ export function PocketIdCard({
 
   return (
     <div
-      className="relative overflow-hidden rounded-[28px] border border-black/10 shadow-xl"
+      className="relative overflow-hidden rounded-[1px] border border-black/10 shadow-xl"
       style={{
         width: 856,
         height: 540,
         fontFamily: "var(--font-display, var(--font-body))",
       }}
     >
-      {/* Background gradient: saffron -> white -> navy */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--color-saffron)_0%,#ffffff_40%,#0B2A55_100%)]" />
+      {/* Background gradient: saffron (top-left) -> green (bottom-right) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom_right,var(--color-saffron)_15%,white_50%,var(--color-green)_85%)]" />
 
-      {/* Header white strip */}
-      <div className="absolute left-0 top-0 h-[118px] w-full bg-white">
+      {/* Header strip */}
+      <div className="absolute left-0 top-0 h-[118px] w-full bg-transparent border-b border-black/10">
         <div className="flex h-full items-center gap-4 px-6">
           {/* Left logo */}
           <div className="relative h-[86px] w-[86px] overflow-hidden rounded-2xl border border-black/10 bg-white">
             {data.logoUrl ? (
-              <Image src={data.logoUrl} alt={data.logoAlt ?? "Logo"} fill className="object-contain p-2" />
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={data.logoUrl} alt={data.logoAlt ?? "Logo"} className="h-full w-full object-cover" crossOrigin="anonymous" />
             ) : (
               <div className="flex h-full w-full items-center justify-center text-xl font-black text-zinc-900">
                 YP
@@ -55,107 +56,55 @@ export function PocketIdCard({
             <div className="mt-1 text-[16px] font-black text-zinc-800">(शहीद भगत सिंह फोर्स)</div>
           </div>
 
-          {/* Right tricolor */}
-          <div className="h-[86px] w-[86px] overflow-hidden rounded-2xl border border-black/10">
-            <div className="h-full w-full bg-[linear-gradient(180deg,#FF9933_0%,#ffffff_50%,#138808_100%)]" />
+          {/* Right tricolor (Indian Flag) */}
+          <div className="relative h-[86px] w-[86px] overflow-hidden rounded-2xl border border-black/10 bg-white">
+            <div className="absolute top-0 h-[33.33%] w-full bg-[#FF9933]" />
+            <div className="absolute top-[33.33%] flex h-[33.34%] w-full items-center justify-center bg-white">
+              {/* Ashoka Chakra */}
+              <svg viewBox="0 0 100 100" className="h-[80%] text-[#000080]">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="4" />
+                <circle cx="50" cy="50" r="8" fill="currentColor" />
+                {Array.from({ length: 24 }).map((_, i) => (
+                  <line
+                    key={i}
+                    x1="50"
+                    y1="50"
+                    x2="50"
+                    y2="5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    transform={`rotate(${i * 15} 50 50)`}
+                  />
+                ))}
+              </svg>
+            </div>
+            <div className="absolute bottom-0 h-[33.33%] w-full bg-[#138808]" />
           </div>
         </div>
       </div>
 
-      {/* Photo box */}
-      <div className="absolute right-6 top-[145px] h-[170px] w-[150px] overflow-hidden rounded-2xl border-2 border-white bg-white shadow">
-        {data.photoDataUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={data.photoDataUrl}
-            alt="Member photo"
-            className="h-full w-full object-cover"
-            crossOrigin="anonymous"
-          />
-        ) : (
-          <Image src="/demo/avatar.svg" alt="Member" fill className="object-cover" />
-        )}
-      </div>
+      {/* Photo and Stamp Container Card */}
+      <div className="absolute right-6 top-[145px] z-40 flex w-[160px] flex-col items-center rounded-[2px] bg-white p-2 pb-2 shadow-xl">
+        {/* Photo */}
+        <div className="relative h-[170px] w-full overflow-hidden rounded-[2px] border border-black/10 bg-zinc-100">
+          {data.photoDataUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={data.photoDataUrl}
+              alt="Member photo"
+              className="h-full w-full object-cover"
+              crossOrigin="anonymous"
+            />
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src="/demo/avatar.svg" alt="Member" className="h-full w-full object-cover" crossOrigin="anonymous" />
+          )}
+        </div>
 
-      {/* Status seal (blue circular stamp) */}
-      <div className="absolute right-6 top-[320px] z-50 flex w-[150px] justify-center">
-        <div className="pointer-events-none select-none mix-blend-multiply opacity-85">
-          <svg
-            viewBox="0 0 200 200"
-            className="h-[94px] w-[94px] text-[#0047AB]"
-            style={{ transform: "rotate(-15deg)" }}
-          >
-            <defs>
-              {/* Rough ink texture mask (internal, no external URLs) */}
-              <mask id="stampMask">
-                <rect width="200" height="200" fill="white" />
-                {/* Dots / holes to simulate broken ink */}
-                <g fill="black" opacity="0.22">
-                  <circle cx="38" cy="54" r="4" />
-                  <circle cx="62" cy="34" r="3" />
-                  <circle cx="154" cy="58" r="4" />
-                  <circle cx="168" cy="92" r="3" />
-                  <circle cx="44" cy="140" r="4" />
-                  <circle cx="70" cy="164" r="3" />
-                  <circle cx="150" cy="150" r="4" />
-                  <circle cx="126" cy="172" r="3" />
-                </g>
-                {/* Edge wear (soft) */}
-                <circle cx="100" cy="100" r="92" fill="black" opacity="0.08" />
-              </mask>
-
-              {/* Outer circular path for text */}
-              <path
-                id="circlePath"
-                d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
-                fill="none"
-              />
-            </defs>
-
-            <g mask="url(#stampMask)" fill="none" stroke="currentColor">
-              {/* Outer ring */}
-              <circle cx="100" cy="100" r="86" strokeWidth="6" />
-              <circle cx="100" cy="100" r="70" strokeWidth="3" opacity="0.85" />
-
-              {/* Top arc text */}
-              <text
-                fill="currentColor"
-                className="font-black"
-                fontSize="12"
-                letterSpacing="3"
-              >
-                <textPath href="#circlePath" startOffset="25%" textAnchor="middle">
-                  YUVVA PARIWAR FOUNDATION
-                </textPath>
-              </text>
-
-              {/* Bottom arc text */}
-              <text
-                fill="currentColor"
-                className="font-black"
-                fontSize="11"
-                letterSpacing="2"
-              >
-                <textPath href="#circlePath" startOffset="75%" textAnchor="middle">
-                  HANUMANGARH J.N.
-                </textPath>
-              </text>
-
-              {/* Center band */}
-              <rect x="28" y="86" width="144" height="34" rx="3" strokeWidth="5" />
-              <text
-                x="100"
-                y="110"
-                textAnchor="middle"
-                fill="currentColor"
-                className="font-black"
-                fontSize="22"
-                letterSpacing="4"
-              >
-                {status === "active" || status === "approved" ? "VERIFIED" : "UNVERIFIED"}
-              </text>
-            </g>
-          </svg>
+        {/* Real stamp image */}
+        <div className="pointer-events-none relative h-[94px] w-[94px] select-none opacity-95 -mt-6" style={{ transform: "rotate(-5deg)" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/stamp.png" alt="Stamp" className="h-full w-full object-contain" crossOrigin="anonymous" />
         </div>
       </div>
 
@@ -175,7 +124,7 @@ export function PocketIdCard({
         </div>
       </div>
 
-      {/* Footer navy strip */}
+      {/* Footer strip */}
       <div className="absolute bottom-0 left-0 h-[72px] w-full bg-[#0B2A55]">
         <div className="flex h-full items-center justify-between px-6 text-white">
           <div className="text-[16px] font-bold">
